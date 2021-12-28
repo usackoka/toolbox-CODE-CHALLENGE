@@ -1,0 +1,45 @@
+.accion {
+  &Blue {
+    color: skyblue;
+  }
+  &Green {
+    color: green;
+  }
+  &Red {
+    color: red;
+  }
+  &Gray {
+    color: gray;
+  }
+  &Min {
+    font-size: 150%;
+  }
+  &Max {
+    font-size: 300%;
+  }
+}
+.file {
+  box-shadow: 1px 0px 2px 2px #d0c5c5;
+  border: solid 1.5px white;
+  background: linear-gradient(to top left, #d0c5c5, white);
+  background: -prefix-linear-gradient(left top, #d0c5c5, white);
+  &MinView {
+    min-width: 25%;
+  }
+  &Name {
+    max-width: 70%;
+  }
+  &Actions {
+    width: 30%;
+  }
+  &MaxView {
+    max-width: 45%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .file {
+    &MinView {
+      min-width: 90%;
+    }
+  }
+}

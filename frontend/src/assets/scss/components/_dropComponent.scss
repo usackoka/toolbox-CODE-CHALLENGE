@@ -1,0 +1,15 @@
+.openAdvanced {
+  font-family: tipoBold;
+  font-size: 1.15rem;
+  &:hover {
+    color: rgb(1, 5, 8) !important;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  > i {
+    position: relative;
+    top: 0.1em;
+    left: 0.5em;
+  }
+}
