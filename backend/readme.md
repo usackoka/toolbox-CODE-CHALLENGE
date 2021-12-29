@@ -1,0 +1,4 @@
+## Standard
+
+npx standard
+
