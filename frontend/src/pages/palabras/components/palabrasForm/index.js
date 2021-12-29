@@ -15,7 +15,7 @@ const PalabrasForm = (props) => {
           return (
             <>
               <Row className="mb-6 mt-6">
-                <Col sm="6">
+                <Col sm="12" md="12" lg="12" xl="12">
                   <TextField
                     name="text"
                     label="*Texto a analizar"

@@ -32,7 +32,7 @@ const Header = () => {
         <> 
         <SEO title="TOOLBOX" />
         <Fragment>
-            <div className={`header-section bg-dark sticky-header section ${
+            <div className={`header-section bg-dark section ${
         scroll > headerTop ? "is-sticky" : ""
       }`}>
                 <div className="header-inner">
