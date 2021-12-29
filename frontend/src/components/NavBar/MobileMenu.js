@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types"
-import Logo from '../../components/logo/Logo';
-import MobileNavMenu from './sub-component/MobileNavMenu';
+import Logo from '../logo/Logo';
 
 const MobileMenu = ({show, onClose}) => {
     return (
@@ -17,9 +16,6 @@ const MobileMenu = ({show, onClose}) => {
                         <i className="icon-bottom"></i>
                     </button>
                 </div>
-            </div>
-            <div className="mobile-menu-content">
-                <MobileNavMenu />
             </div>
         </div>
     </div>

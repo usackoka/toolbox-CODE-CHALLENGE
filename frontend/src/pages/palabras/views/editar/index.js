@@ -1,13 +1,12 @@
-import GenericContainer from 'container/GenericContainer';
+import GenericContainer from '../../../../container/GenericContainer';
 import React from 'react';
-import Header from 'partials/header/Header';
+import Header from '../../../../partials/header/Header';
 import Swal from 'sweetalert2';
-import { useFirestore, useFirestoreDocData } from 'reactfire';
 import { StringParam, useQueryParams, withDefault } from 'use-query-params';
 import { Col, Row } from 'react-bootstrap';
-import { FormButton } from 'components/form';
+import { FormButton } from '../../../../components/form';
 import { useHistory } from 'react-router-dom';
-import paths from 'pages/palabras/paths';
+import paths from '../../../../pages/palabras/paths';
 import PalabrasForm from '../../components/palabrasForm';
 
 const EditarPalabra = (props) => {
@@ -16,17 +15,10 @@ const EditarPalabra = (props) => {
     id: withDefault(StringParam, undefined, false)
   });
 
-  const fireBase = useFirestore().collection('palabras');
-  const palabra = fireBase.doc(id ?? '');
-  const { status: statusData, data } = useFirestoreDocData(palabra);
-
   if (!id) {
     return <>Bad request</>;
   }
-  if (id && statusData === 'loading') {
-    return <>Loading</>;
-  }
-
+  
   const onSubmit = async (data, reset, e) => {
     const Toast = Swal.mixin({
       toast: true,
@@ -81,7 +73,7 @@ const EditarPalabra = (props) => {
         title="Editar Palabra"
         subtitle="Ingresa los siguientes datos para analizar tu palabra"
       >
-        <PalabrasForm isEdit onSubmit={onSubmit} defaultValues={data} buttons={Buttons} />
+        <PalabrasForm isEdit onSubmit={onSubmit} defaultValues={{}} buttons={Buttons} />
       </GenericContainer>
     </>
   );

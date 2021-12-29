@@ -6,33 +6,17 @@ import "aos/dist/aos.css";
 import 'react-modal-video/scss/modal-video.scss';
 import './assets/scss/style.scss';
 import CrearPalabra from './pages/palabras/views/crear';
-//import ListadoPalabras from "pages/palabras/views/listado";
-//import EditarPalabra from "pages/palabras/views/editar";
+import EditarPalabra from './pages/palabras/views/editar';
+import ListadoPalabras from './pages/palabras/views/listado';
 
 function App() {
   return (
     <Router>
       <NavScrollTop>
         <Switch>
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL + '/list'}`}
-            component={() => {
-              return <></>;
-            }}
-          />
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL + '/'}`}
-            component={CrearPalabra}
-          />
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL + '/edit'}`}
-            component={() => {
-              return <></>;
-            }}
-          />
+          <Route exact path={`${process.env.PUBLIC_URL + '/list'}`} component={ListadoPalabras} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/'}`} component={CrearPalabra} />
+          <Route exact path={`${process.env.PUBLIC_URL + '/edit'}`} component={EditarPalabra} />
           {/* <Route component ={NotFound} /> */}
         </Switch>
       </NavScrollTop>

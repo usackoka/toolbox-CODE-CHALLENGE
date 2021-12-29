@@ -1,15 +1,15 @@
-import GenericContainer from 'container/GenericContainer';
-import Header from 'partials/header/Header';
+import GenericContainer from '../../../../container/GenericContainer';
+import Header from '../../../../partials/header/Header';
 import React, { useEffect, useState } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { Plus } from 'react-feather';
-import OptionButton from 'components/OptionButton';
-import Toolbar from 'components/Toolbar';
-import ActionsGrid, { ActionColumn } from 'components/grid/columns/actions';
+import OptionButton from '../../../../components/OptionButton';
+import Toolbar from '../../../../components/Toolbar';
+import ActionsGrid from '../../../../components/grid/columns/actions';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import paths from 'pages/palabras/paths';
+import paths from '../../../../pages/palabras/paths';
 
 const ListadoPalabras = (props) => {
   const [data, setData] = useState();
