@@ -2,7 +2,7 @@ import {Fragment, useState, useEffect} from "react";
 import Logo from '../../components/logo/Logo';
 import MobileMenu from "../../components/NavBar/MobileMenu"
 import MainSearch from "../../components/NavBar/MainSearch"
-import SEO from "components/SEO";
+import SEO from '../../components/SEO';
 
 const Header = () => {
     const [ofcanvasShow, setOffcanvasShow] = useState(false);

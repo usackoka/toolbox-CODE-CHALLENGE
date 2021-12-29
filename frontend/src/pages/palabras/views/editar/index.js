@@ -8,7 +8,7 @@ import { Col, Row } from 'react-bootstrap';
 import { FormButton } from 'components/form';
 import { useHistory } from 'react-router-dom';
 import paths from 'pages/palabras/paths';
-import PalabrasForm from 'pages/palabras/components/segurosForm';
+import PalabrasForm from '../../components/palabrasForm';
 
 const EditarPalabra = (props) => {
   const history = useHistory();

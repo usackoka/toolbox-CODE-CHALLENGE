@@ -1,11 +1,11 @@
-import GenericContainer from 'container/GenericContainer';
+import GenericContainer from '../../../../container/GenericContainer';
 import React from 'react';
-import Header from 'partials/header/Header';
+import Header from '../../../../partials/header/Header';
 import Swal from 'sweetalert2';
 import { Col, Row } from 'react-bootstrap';
-import { FormButton } from 'components/form';
 import { useHistory } from 'react-router-dom';
-import PalabrasForm from 'pages/palabras/components/segurosForm';
+import { FormButton } from '../../../../components/form';
+import PalabrasForm from '../../components/palabrasForm';
 
 const CrearPalabra = (props) => {
   const history = useHistory();

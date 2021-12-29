@@ -1,8 +1,8 @@
 import React from 'react';
-import HookFormRender from 'components/hook-form-render';
+import HookFormRender from '../../../../components/hook-form-render';
 import { Col, Row } from 'react-bootstrap';
-import { TextField } from 'components/form';
-import validacionesPalabras from 'pages/palabras/validations/palabras.validations';
+import validacionesPalabras from './../../validations/palabras.validations';
+import { TextField } from '../../../../components/form';
 
 const PalabrasForm = (props) => {
 

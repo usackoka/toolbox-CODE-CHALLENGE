@@ -5,6 +5,7 @@ import React from 'react'
 import "aos/dist/aos.css";
 import 'react-modal-video/scss/modal-video.scss';
 import './assets/scss/style.scss';
+import CrearPalabra from './pages/palabras/views/crear';
 //import ListadoPalabras from "pages/palabras/views/listado";
 //import EditarPalabra from "pages/palabras/views/editar";
 
@@ -23,9 +24,7 @@ function App() {
           <Route
             exact
             path={`${process.env.PUBLIC_URL + '/'}`}
-            component={() => {
-              return <></>;
-            }}
+            component={CrearPalabra}
           />
           <Route
             exact
