@@ -1,9 +1,9 @@
-import routerx from 'express-promise-router';
-import WordController from "../controllers/wordController.js";
+import routerx from 'express-promise-router'
+import WordController from '../controllers/wordController.js'
 import { WordMiddleware } from '../middlewares/index.js'
 
-const router=routerx();
+const router = routerx()
 
-router.get("/iecho", WordMiddleware.validQueryParams, WordController.iecho);
+router.get('/iecho', WordMiddleware.validQueryParams, WordController.iecho)
 
-export default router;
+export default router

@@ -1,8 +1,8 @@
-import routerx from 'express-promise-router';
+import routerx from 'express-promise-router'
 import WordRouter from './word.js'
 
-const router = routerx();
+const router = routerx()
 
-router.use("", WordRouter);
+router.use('', WordRouter)
 
-export default router;
+export default router
