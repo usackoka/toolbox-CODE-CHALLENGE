@@ -2,14 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors'
 import path from 'path';
-import mongoose from 'mongoose';
-import router from './routes'
-import cfgVar from './configuration/Variables'
-
-mongoose.Promise = global.Promise;
-mongoose.connect(cfgVar.urlMongoDB, cfgVar.configMongoDB)
-.then(mongoose => console.log('Conectado a: '+cfgVar.urlMongoDB))
-.catch(err => console.log('error: '+ err));
+import router from './routes/index.js'
 
 const app=express();
 app.use(morgan('dev'));

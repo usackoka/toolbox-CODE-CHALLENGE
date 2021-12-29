@@ -1,8 +1,8 @@
 import routerx from 'express-promise-router';
-import CasoRouter from './Caso'
+import WordRouter from './word.js'
 
 const router = routerx();
 
-router.use('/caso', CasoRouter);
+router.use("/word", WordRouter);
 
 export default router;
