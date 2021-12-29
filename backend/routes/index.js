@@ -3,6 +3,6 @@ import WordRouter from './word.js'
 
 const router = routerx();
 
-router.use("/word", WordRouter);
+router.use("", WordRouter);
 
 export default router;

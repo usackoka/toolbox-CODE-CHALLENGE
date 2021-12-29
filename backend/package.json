@@ -1,42 +1,47 @@
 {
-	"name": "backend",
-	"version": "1.0.0",
-	"description": "toolbox-CODE-CHALLENGE",
-	"main": "index.js",
-	"type": "module",
-	"scripts": {
-		"start": "node index.js",
-		"dev": "nodemon index.js --exec babel-node"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/usackoka/toolbox-CODE-CHALLENGE.git"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/usackoka/toolbox-CODE-CHALLENGE/issues"
-	},
-	"homepage": "https://github.com/usackoka/toolbox-CODE-CHALLENGE#readme",
-	"dependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-stage-3": "^6.24.1",
-		"blob-stream": "^0.1.3",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.2",
-		"express-promise-router": "^3.0.3",
-		"mongoose": "^6.1.4",
-		"morgan": "^1.9.1",
-		"redis": "^3.1.2"
-	},
-	"devDependencies": {
-		"babel-cli": "^6.26.0",
-		"babel-plugin-transform-class-properties": "^6.24.1",
-		"babel-preset-env": "^1.6.1",
-		"mocha": "^9.1.3",
-		"nodemon": "^2.0.15"
-	}
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "toolbox-challenge",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "-": "^0.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "body-parser": "^1.19.1",
+    "bytes": "^3.1.1",
+    "content-disposition": "^0.5.4",
+    "cookie": "^0.4.1",
+    "cors": "^2.8.5",
+    "D": "^1.0.0",
+    "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "forwarded": "^0.2.0",
+    "http-errors": "^1.8.1",
+    "inherits": "^2.0.4",
+    "ipaddr.js": "^1.9.1",
+    "mongoose": "^6.1.4",
+    "nodemon": "^2.0.15",
+    "proxy-addr": "^2.0.7",
+    "qs": "^6.9.6",
+    "raw-body": "^2.4.2",
+    "redis": "^3.1.2",
+    "send": "^0.17.2",
+    "serve-static": "^1.14.2",
+    "setprototypeof": "^1.2.0",
+    "toidentifier": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3",
+    "morgan": "^1.10.0",
+    "standard": "^16.0.4"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js",
+    "dev": "nodemon index.js -exec babel-node"
+  },
+  "author": "",
+  "license": "ISC"
 }
