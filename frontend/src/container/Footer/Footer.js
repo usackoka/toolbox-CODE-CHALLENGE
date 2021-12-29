@@ -46,7 +46,7 @@ const Footer = () => {
 
                 <div className="row">
                     <div className="col">
-                        <p className="copyright">&copy; 2021 <strong>SOAP</strong> Made with <i className="fas fa-heart text-danger"></i> by <a target="_blank" rel="noopener noreferrer" href="https://hasthemes.com/"><strong>HasThemes</strong></a>.</p>
+                        <p className="copyright">&copy; 2021 <strong>TOOLBOX</strong> Made with <i className="fas fa-heart text-danger"></i> by <a target="_blank" rel="noopener noreferrer" href="https://hasthemes.com/"><strong>HasThemes</strong></a>.</p>
                     </div>
                 </div>
 

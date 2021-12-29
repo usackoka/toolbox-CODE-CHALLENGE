@@ -10,8 +10,8 @@ const ContactFromContainer = () => {
                     <div className="offset-lg-2 col-lg-8">
                         <SectionTitle
                             headingOption="fz-32"
-                            title="Solicitar Seguro"
-                            subTitle="Ingresa los siguientes datos para solicitar el seguro de tu vehículo"
+                            title="Solicitar Palabra"
+                            subTitle="Ingresa los siguientes datos para solicitar el palabra de tu vehículo"
                         />
                         <ContactFrom />
                     </div>
