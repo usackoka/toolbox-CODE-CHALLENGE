@@ -11,6 +11,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "body-parser": "^1.19.1",
     "bytes": "^3.1.1",
+    "chai": "^4.3.4",
     "content-disposition": "^0.5.4",
     "cookie": "^0.4.1",
     "cors": "^2.8.5",
@@ -30,6 +31,7 @@
     "send": "^0.17.2",
     "serve-static": "^1.14.2",
     "setprototypeof": "^1.2.0",
+    "supertest": "^6.1.6",
     "toidentifier": "^1.0.1"
   },
   "devDependencies": {
