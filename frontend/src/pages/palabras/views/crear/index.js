@@ -8,9 +8,13 @@ import { FormButton } from '../../../../components/form';
 import PalabrasForm from '../../components/palabrasForm';
 import paths from '../../paths'
 import { getAnalisys } from '../../../../services/palabras'
+import { useDispatch } from 'react-redux'
+import { createPalabra } from '../../../../redux/states/palabra.state';
+import { v4 } from 'uuid';
 
 const CrearPalabra = (props) => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const onSubmit = async (data, e) => {
     const Toast = Swal.mixin({
@@ -25,14 +29,7 @@ const CrearPalabra = (props) => {
       }
     });
 
-    Toast.fire({
-      icon: 'info',
-      title: 'Analizando palabra...'
-    });
-
     const response = await getAnalisys(data.text);
-
-    Toast.close();
 
     if (response.error) { 
       Toast.fire({
@@ -41,6 +38,15 @@ const CrearPalabra = (props) => {
       });
       return ;
     }
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Palabra analizada...'
+    });
+
+    dispatch(createPalabra({ ...response, id: v4() }))
+    
+    history.push(paths.list);
   };
 
   const Buttons = (

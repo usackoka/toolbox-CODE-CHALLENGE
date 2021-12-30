@@ -1,6 +1,6 @@
 import GenericContainer from '../../../../container/GenericContainer';
 import Header from '../../../../partials/header/Header';
-import React, { useEffect } from 'react';
+import React from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { Plus } from 'react-feather';
 import OptionButton from '../../../../components/OptionButton';
@@ -9,21 +9,15 @@ import ActionsGrid from '../../../../components/grid/columns/actions';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { deletePalabra } from '../../../../redux/states/palabra.state';
 import paths from '../../../../pages/palabras/paths';
 
 const ListadoPalabras = (props) => {
   const palabraState = useSelector((store) => store.palabra);
-  console.log(palabraState);
 
   const history = useHistory();
-
-  useEffect(() => {
-    const getAll = async () => {
-    };
-
-    getAll();
-  }, []);
+  const dispatch = useDispatch();
 
   const actions = [
     {
@@ -33,7 +27,7 @@ const ListadoPalabras = (props) => {
       click: async (data) => {
         Swal.fire({
           title: '¿Estás seguro?',
-          text: 'La eliminación de un análisis no se puede revertir',
+          text: 'La eliminación de una palabra no se puede revertir',
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
@@ -41,7 +35,8 @@ const ListadoPalabras = (props) => {
           confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire('¡Eliminado!', 'El análisis ha sido eliminado.', 'success');
+            dispatch(deletePalabra({id: data.id}));
+            Swal.fire('¡Eliminado!', 'La palabra ha sido eliminada.', 'success');
           }
         });
       }
@@ -58,6 +53,12 @@ const ListadoPalabras = (props) => {
 
   const columnInfo = [
     {
+      dataField: 'textOriginal',
+      text: 'Texto original',
+      align: 'center',
+      headerAlign: 'center'
+    },
+    {
       dataField: 'text',
       text: 'Espejo',
       align: 'center',
@@ -66,12 +67,6 @@ const ListadoPalabras = (props) => {
     {
       dataField: 'palindrome',
       text: 'Es palíndromo',
-      align: 'center',
-      headerAlign: 'center'
-    },
-    {
-      dataField: 'textOriginal',
-      text: 'Texto original',
       align: 'center',
       formatter: (cell, row, rowIndex) => (
         <div className=" d-flex justify-content-end">{row?.palindrome ? 'Sí' : 'No'}</div>
@@ -108,16 +103,16 @@ const ListadoPalabras = (props) => {
               />
             ]}
           />
-          {(
+          {
             <BootstrapTable
               wrapperClasses="table-responsive"
               striped
               bordered={false}
               columns={columnInfo}
-              data={[]}
+              data={palabraState.palabras}
               keyField="id"
             />
-          )}
+          }
         </>
       </GenericContainer>
     </>

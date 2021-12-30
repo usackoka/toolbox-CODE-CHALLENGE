@@ -8,14 +8,22 @@ import { FormButton } from '../../../../components/form';
 import { useHistory } from 'react-router-dom';
 import paths from '../../../../pages/palabras/paths';
 import PalabrasForm from '../../components/palabrasForm';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAnalisys } from '../../../../services/palabras';
+import { modifyPalabra } from '../../../../redux/states/palabra.state';
 
 const EditarPalabra = (props) => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [{ id }] = useQueryParams({
     id: withDefault(StringParam, undefined, false)
   });
 
-  if (!id) {
+  const palabras = useSelector((store) => store.palabra.palabras);
+  const palabra = palabras.find((x) => x.id === id);
+  const data = { ...palabra, text: palabra.textOriginal };
+
+  if (!id || id==='undefined') {
     return <>Bad request</>;
   }
   
@@ -36,12 +44,17 @@ const EditarPalabra = (props) => {
       icon: 'info',
       title: 'Editando solicitud'
     });
+
+    const response = await getAnalisys(data.text);
+
     Toast.close();
+
     Toast.fire({
       icon: 'success',
-      title: 'Solicitud editada'
+      title: 'Palabra editada'
     });
 
+    dispatch(modifyPalabra({...response, id }));
     history.push(paths.list);
   };
 
@@ -50,7 +63,7 @@ const EditarPalabra = (props) => {
       <Col>
         <FormButton
           className="dark"
-          text="Cancelar"
+          text="Cancelar / Regresar"
           type="button"
           onClick={() => {
             history.goBack();
@@ -58,10 +71,7 @@ const EditarPalabra = (props) => {
         />
       </Col>
       <Col>
-        <FormButton name="btnCotizacion" className="primary" text="Enviar palabra" type="submit" />
-      </Col>
-      <Col>
-        <FormButton name="btnModificar" className="primary" text="Modificar" type="submit" />
+        <FormButton className="primary" text="Analizar" type="submit" />
       </Col>
     </Row>
   );
@@ -73,7 +83,7 @@ const EditarPalabra = (props) => {
         title="Editar Palabra"
         subtitle="Ingresa los siguientes datos para analizar tu palabra"
       >
-        <PalabrasForm isEdit onSubmit={onSubmit} defaultValues={{}} buttons={Buttons} />
+        <PalabrasForm isEdit onSubmit={onSubmit} defaultValues={data} buttons={Buttons} />
       </GenericContainer>
     </>
   );

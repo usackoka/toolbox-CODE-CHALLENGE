@@ -8,7 +8,11 @@ export const palabraSlice = createSlice({
   name: 'palabra',
   initialState: PalabraInitialState,
   reducers: {
-    createPalabra: (state, action) => ({ palabras: [...state, ...action.payload] }),
+    createPalabra: (state, action) => { 
+      return {
+        palabras: [...state.palabras, { ...action.payload }]
+      };
+    },
     modifyPalabra: (state, action) => {
       const aMod = state.palabras.find((x) => x.id === action.payload.id);
       if (aMod) {
@@ -19,10 +23,13 @@ export const palabraSlice = createSlice({
       }
       return state;
     },
+    deletePalabra: (state, action) => {
+      return { palabras: [...state.palabras.filter((x) => x.id !== action.payload.id)] };
+    },
     resetPalabra: () => PalabraInitialState
   }
 });
 
-export const { createPalabra, modifyPalabra, resetPalabra } = palabraSlice.actions;
+export const { createPalabra, modifyPalabra, resetPalabra, deletePalabra } = palabraSlice.actions;
 
 export default palabraSlice.reducer;
