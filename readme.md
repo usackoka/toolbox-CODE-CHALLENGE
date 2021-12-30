@@ -1,9 +1,18 @@
+### FRONTEND
+
 ## Start Project
+
+npm install
+npm start
+
+## BACKEND
+
+### Start Project
 
 npm install
 npm run dev
 
-# Run test
+## Run test
 
 npm test
 
