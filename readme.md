@@ -1,8 +1,9 @@
 ## FRONTEND
 
-## Start Project
+### Start Project
 
 npm install
+
 npm start
 
 ## BACKEND
@@ -10,13 +11,14 @@ npm start
 ### Start Project
 
 npm install
+
 npm run dev
 
-## Run test
+### Run test
 
 npm test
 
-## Execute Standard
+### Execute Standard
 
 npx standard
 
