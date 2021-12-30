@@ -1,0 +1,1 @@
+export { default as palabraSlice } from './palabra.state'

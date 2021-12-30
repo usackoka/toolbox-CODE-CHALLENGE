@@ -6,6 +6,8 @@ import { Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { FormButton } from '../../../../components/form';
 import PalabrasForm from '../../components/palabrasForm';
+import paths from '../../paths'
+import { getAnalisys } from '../../../../services/palabras'
 
 const CrearPalabra = (props) => {
   const history = useHistory();
@@ -25,14 +27,20 @@ const CrearPalabra = (props) => {
 
     Toast.fire({
       icon: 'info',
-      title: 'Analizando palabra'
+      title: 'Analizando palabra...'
     });
+
+    const response = await getAnalisys(data.text);
+
     Toast.close();
 
-    Toast.fire({
-      icon: 'success',
-      title: 'Palabra analizada con éxito.'
-    });
+    if (response.error) { 
+      Toast.fire({
+        icon: 'error',
+        title: 'Ocurrió un error al analizar la palabra.'
+      });
+      return ;
+    }
   };
 
   const Buttons = (
@@ -40,15 +48,15 @@ const CrearPalabra = (props) => {
       <Col>
         <FormButton
           className="secondary"
-          text="Cancelar"
+          text="Cancelar / Regresar"
           type="button"
           onClick={() => {
-            history.goBack();
+            history.push(paths.list);
           }}
         />
       </Col>
       <Col>
-        <FormButton className="primary" text="Cotizar" type="submit" />
+        <FormButton className="primary" text="Analizar" type="submit" />
       </Col>
     </Row>
   );

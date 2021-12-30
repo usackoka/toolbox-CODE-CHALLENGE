@@ -1,6 +1,6 @@
 import GenericContainer from '../../../../container/GenericContainer';
 import Header from '../../../../partials/header/Header';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { Plus } from 'react-feather';
 import OptionButton from '../../../../components/OptionButton';
@@ -9,10 +9,13 @@ import ActionsGrid from '../../../../components/grid/columns/actions';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useSelector } from 'react-redux'
 import paths from '../../../../pages/palabras/paths';
 
 const ListadoPalabras = (props) => {
-  const [data, setData] = useState();
+  const palabraState = useSelector((store) => store.palabra);
+  console.log(palabraState);
+
   const history = useHistory();
 
   useEffect(() => {
@@ -105,13 +108,13 @@ const ListadoPalabras = (props) => {
               />
             ]}
           />
-          {data && (
+          {(
             <BootstrapTable
               wrapperClasses="table-responsive"
               striped
               bordered={false}
               columns={columnInfo}
-              data={data}
+              data={[]}
               keyField="id"
             />
           )}
