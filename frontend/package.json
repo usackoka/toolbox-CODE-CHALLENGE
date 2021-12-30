@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
@@ -13,10 +15,12 @@
     "@testing-library/user-event": "^12.6.0",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "babel-jest": "^27.4.5",
     "bootstrap": "^4.5.3",
     "disqus-react": "^1.0.11",
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
+    "jest": "^27.4.5",
     "node-sass": "^4.14.1",
     "parallax-js": "^3.1.0",
     "react": "^17.0.2",
@@ -35,6 +39,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-select": "^4.3.1",
+    "react-test-renderer": "^17.0.2",
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
     "react-vivus": "0.0.2",
@@ -50,7 +55,7 @@
   "scripts": {
     "start": "set PORT=3008 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .gitignore . --ext js --ext jsx",
     "lint:fix": "npm run lint --fix"
